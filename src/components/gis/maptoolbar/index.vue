@@ -47,6 +47,11 @@
 			  </div>
 			</el-tooltip>
              <div  class="esri-maptoolbar-toolitem-sepator"></div>
+			 <el-tooltip content="locate" placement="left">
+			   <div  class="esri-maptoolbar-toolitem" @click="btnlocate" >
+                <span :class="[{'esri-icon-locate':!state.islocate},{'esri-icon-locate':state.islocate},{'active':state.islocate}]"></span>
+			   </div>
+			</el-tooltip>
 			 <!-- <el-tooltip content="Measure" placement="right">
 			  <div class='esri-maptoolbar-toolitem-measurement-container'>
 			   <div class='esri-maptoolbar-toolitem-measurement'>
@@ -147,6 +152,7 @@ export default {
 		 isopen:true,
 		 controlTooltips:'HideToolbar',
 		 zoombarisopen:false,
+		 islocate:false,
 		 mapzoom:0,
 		 mapminzoom:0,
 		 mapmaxzoom:23,
@@ -197,7 +203,9 @@ export default {
 		  }
 	  }
 	);
-
+	const btnlocate=()=>{
+      state.islocate=!state.islocate
+	};
 	 const openmaptoolbar = () => {
           state.isopen=! state.isopen
 		  state.controlTooltips=state.isopen? "HideToolbar":"ShowToolBar"
@@ -338,6 +346,7 @@ export default {
 		maptoolbarzoomMoveInaction,
         viewzoomin,
 		viewzoomout,
+		btnlocate,
 		initmapcamera,
 		openMeasurement,
 		measure_point,

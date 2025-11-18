@@ -5,6 +5,7 @@ export  default interface MaptoolbarState {
   isopen: boolean;
   controlTooltips: any;  
   zoombarisopen: boolean;
+  islocate: boolean;
   mapzoom: number;
   mapminzoom: number;
   mapmaxzoom: number;
