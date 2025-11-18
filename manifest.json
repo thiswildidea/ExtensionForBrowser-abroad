@@ -4,7 +4,8 @@
   "version": "1.0.0",
   "description": "a browser extension for visualizing Esri Map onlinine using ArcGIS JavaScript API",
   "permissions": [
-    "storage"
+    "storage",
+    "geolocation"
   ],
   "host_permissions": [
     "https://services.arcgisonline.com/*",
