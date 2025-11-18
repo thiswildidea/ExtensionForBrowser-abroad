@@ -124,7 +124,7 @@
 </template>
 
 <script lang="ts">
-import { ref, toRefs, reactive,onBeforeMount,onMounted, nextTick, computed, watch } from 'vue';
+import { ref, toRefs, reactive, onBeforeMount, onMounted, onBeforeUnmount, nextTick, computed, watch } from 'vue';
 import{pointMeasurement,polylineMeasurement,rectangleMeasurement,polygonMeasurement,polycircleMeasurement} from '/@/components/gis/maptoolbar/measurement';
 import GeoSenceConfig from '/@/config/GeoSenceConfig';
 import SpatialReference from "@arcgis/core/geometry/SpatialReference";
@@ -133,6 +133,7 @@ import Extent from "@arcgis/core/geometry/Extent";
 import { useMapStore } from '/@/stores/modules/map'
 import {get_mapconfig} from "/@/api/map/index"
 import MaptoolbarState from '/@/components/gis/maptoolbar/MaptoolbarState';
+import { createLocateService } from '/@/components/gis/maptoolbar/locateService';
 export default {
 	name: 'maptoolbar',
 	emits: ['switchmapmode'],
@@ -203,9 +204,17 @@ export default {
 		  }
 	  }
 	);
-	const btnlocate=()=>{
-      state.islocate=!state.islocate
-	};
+	// 创建定位服务实例
+let locateService = createLocateService(props.ViewContainer_type);
+
+const btnlocate=()=>{
+  state.islocate=!state.islocate;
+  if(state.islocate){
+    locateService.startLocate();
+  }else{
+    locateService.stopLocate();
+  }
+};
 	 const openmaptoolbar = () => {
           state.isopen=! state.isopen
 		  state.controlTooltips=state.isopen? "HideToolbar":"ShowToolBar"
@@ -340,6 +349,11 @@ export default {
 	  state.is3dmode=!state.is3dmode
 	  mapStore.setis3dmodel(state.is3dmode)
 	}
+
+// 组件销毁时清理定位资源
+onBeforeUnmount(()=>{
+  locateService.stopLocate();
+});
 	return {
 		openmaptoolbar,
 		changeviewzoom,
