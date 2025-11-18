@@ -1,0 +1,296 @@
+{
+  "surfaceColor": "#000000",
+  "initextent": {
+    "xmin": -276797.6146989615,
+    "ymin": -129398.8781704794,
+    "xmax": 307792.7776257845,
+    "ymax": 136601.9802618057,
+    "zoom": 1,
+    "constraints": {
+      "minZoom": 23,
+      "maxZoom": 0
+    }
+  },
+  "initcamera": {
+    "fov": 55,
+    "heading": 0,
+    "tilt": 0.49999999999913347,
+    "x": 7550.363020091461,
+    "y": -5522.092829789462,
+    "z": 445034.06439390784,
+    "options": {
+      "speedFactor": 0.1,
+      "duration": 2000,
+      "maxDuration": 2000,
+      "easing": "in-expo",
+      "s": "linear, in-cubic, out-cubic, in-out-cubic, in-expo, out-expo, in-out-expo, in-out-coast-quadratic"
+    },
+    "constraints": {
+      "altitude": {
+        "max": 100000000
+      }
+    }
+  },
+  "highlightOptions": {
+    "color": [0, 191, 255, 1],
+    "haloOpacity": 0.9,
+    "fillOpacity": 0.2
+  },
+  "GISService": {
+    "geometryService": "dd",
+    "baseMapServices": {
+      "isToken": false,
+      "serverurl": "http://192.168.113.201:8080/OneMapServer/rest/services",
+      "tokenType ": "OneMap ",
+      "layers": [{
+        "url": "https://services.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer",
+        "layerEName": "World_Imagery",
+        "lang": "message.gis.bmapgallery.World_Imagery",
+        "isToken": false,
+        "visible": true,
+        "opacity": 1.0,
+        "mapType": "TileLayer",
+        "tag": "暗黑底图",
+        "layerCName": "暗黑底图",
+        "maxScale": 0,
+        "listmode": true,
+        "type": "World_Imagery"
+      },  
+      {
+        "url": "https://services.arcgisonline.com/arcgis/rest/services/World_Terrain_Base/MapServer",
+        "layerEName": "World_Terrain_Base",
+        "lang": "message.gis.bmapgallery.basemap_air",
+        "isToken": false,
+        "visible": false,
+        "opacity": 1.0,
+        "mapType": "TileLayer",
+        "tag": "影像底图",
+        "layerCName": "影像底图",
+        "maxScale": 0,
+        "listmode": true,
+        "type": "World_Terrain_Base"
+      },  
+      {
+        "url": "https://services.arcgisonline.com/arcgis/rest/services/World_Topo_Map/MapServer",
+        "layerEName": "World_Topo_Map",
+        "lang": "message.gis.bmapgallery.World_Topo_Map",
+        "isToken": false,
+        "visible": false,
+        "opacity": 1.0,
+        "mapType": "TileLayer",
+        "tag": "影像底图",
+        "layerCName": "影像底图",
+        "maxScale": 0,
+        "listmode": true,
+        "type": "World_Topo_Map"
+      },  
+      {
+        "url": "https://services.arcgisonline.com/arcgis/rest/services/World_Street_Map/MapServer",
+        "layerEName": "World_Street_Map",
+        "lang": "message.gis.bmapgallery.World_Street_Map",
+        "isToken": false,
+        "visible": false,
+        "opacity": 1.0,
+        "mapType": "TileLayer",
+        "tag": "影像底图",
+        "layerCName": "影像底图",
+        "maxScale": 0,
+        "listmode": true,
+        "type": "World_Street_Map"
+      }]
+    },
+    "bussinessLayers": [{
+        "id": "baseMap",
+        "title": "底图",
+        "tag": "baseMap",
+        "layerEName": "baseMap",
+        "lang": "message.gis.mapgallery.baseMap",
+        "visible": true,
+        "listMode": "show",
+        "layerGroups": [{
+          "id": "arcgisTileBaseMap",
+          "title": "arcgisTileBaseMap",
+          "tag": "arcgisTileBaseMap",
+          "layerEName": "arcgisTileBaseMap",
+          "lang": "message.gis.mapgallery.arcgisTileBaseMap",
+          "visible": true,
+          "listMode": "show",
+          "layers": [{
+            "url": "https://services.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer",
+            "id": "Imagery",
+            "visible": false,
+            "opacity": 1.0,
+            "maptype": "TileLayer",
+            "tag": "Imagery",
+            "title": "世界影像",
+            "layerEName": "Imagery",
+            "lang": "message.gis.mapgallery.arcgis_tile_baseMap.Imagery",
+            "type": "image",
+            "listMode": "show",
+            "usedin2d": true
+          },{
+            "url": "https://services.arcgisonline.com/arcgis/rest/services/World_Terrain_Base/MapServer",
+            "id": "Terrain",
+            "visible": false,
+            "opacity": 1.0,
+            "maptype": "TileLayer",
+            "tag": "Terrain",
+            "title": "Terrain",
+            "layerEName": "Terrain",
+            "lang": "message.gis.mapgallery.arcgis_tile_baseMap.Terrain",
+            "type": "image",
+            "listMode": "show",
+            "usedin2d": true
+          },{
+            "url": "https://services.arcgisonline.com/arcgis/rest/services/World_Topo_Map/MapServer",
+            "id": "Topo",
+            "visible": false,
+            "opacity": 1.0,
+            "maptype": "TileLayer",
+            "tag": "Topo",
+            "title": "Topo",
+            "layerEName": "Topo",
+            "lang": "message.gis.mapgallery.arcgis_tile_baseMap.Topo",
+            "type": "image",
+            "listMode": "show",
+            "usedin2d": true
+          },{
+            "url": "https://services.arcgisonline.com/arcgis/rest/services/World_Street_Map/MapServer",
+            "id": "Street",
+            "visible": false,
+            "opacity": 1.0,
+            "maptype": "TileLayer",
+            "tag": "Street",
+            "title": "Street",
+            "layerEName": "Street",
+            "lang": "message.gis.mapgallery.arcgis_tile_baseMap.Street",
+            "type": "image",
+            "listMode": "show",
+            "usedin2d": true
+          },{
+            "url": "https://services.arcgisonline.com/arcgis/rest/services/World_Shaded_Relief/MapServer",
+            "id": "S_Relief",
+            "visible": false,
+            "opacity": 1.0,
+            "maptype": "TileLayer",
+            "tag": "S_Relief",
+            "title": "S_Relief",
+            "layerEName": "S_Relief",
+            "lang": "message.gis.mapgallery.arcgis_tile_baseMap.S_Relief",
+            "type": "image",
+            "listMode": "show",
+            "usedin2d": true
+          },{
+            "url": "https://services.arcgisonline.com/arcgis/rest/services/World_Physical_Map/MapServer",
+            "id": "Physical",
+            "visible": false,
+            "opacity": 1.0,
+            "maptype": "TileLayer",
+            "tag": "Physical",
+            "title": "Physical",
+            "layerEName": "Physical",
+            "lang": "message.gis.mapgallery.arcgis_tile_baseMap.Physical",
+            "type": "image",
+            "listMode": "show",
+            "usedin2d": true
+          },{
+            "url": "https://services.arcgisonline.com/arcgis/rest/services/Canvas/World_Dark_Gray_Base/MapServer",
+            "id": "Dark_Gray",
+            "visible": false,
+            "opacity": 1.0,
+            "maptype": "TileLayer",
+            "tag": "Dark_Gray",
+            "title": "Dark_Gray",
+            "layerEName": "Dark_Gray",
+            "lang": "message.gis.mapgallery.arcgis_tile_baseMap.Dark_Gray",
+            "type": "image",
+            "listMode": "show",
+            "usedin2d": true
+          },{
+            "url": "https://services.arcgisonline.com/arcgis/rest/services/Canvas/World_Light_Gray_Base/MapServer",
+            "id": "Light_Gray",
+            "visible": false,
+            "opacity": 1.0,
+            "maptype": "TileLayer",
+            "tag": "Light_Gray",
+            "title": "Light_Gray",
+            "layerEName": "Light_Gray",
+            "lang": "message.gis.mapgallery.arcgis_tile_baseMap.Light_Gray",
+            "type": "image",
+            "listMode": "show",
+            "usedin2d": true
+          },{
+            "url": "https://server.arcgisonline.com/arcgis/rest/services/Elevation/World_Hillshade/MapServer",
+            "id": "Hillshade",
+            "visible": false,
+            "opacity": 1.0,
+            "maptype": "TileLayer",
+            "tag": "Hillshade",
+            "title": "Hillshade",
+            "layerEName": "Hillshade",
+            "lang": "message.gis.mapgallery.arcgis_tile_baseMap.Hillshade",
+            "type": "image",
+            "listMode": "show",
+            "usedin2d": true
+          },{
+            "url": "https://services.arcgisonline.com/arcgis/rest/services/Ocean/World_Ocean_Base/MapServer",
+            "id": "Ocean_Base",
+            "visible": false,
+            "opacity": 1.0,
+            "maptype": "TileLayer",
+            "tag": "Ocean_Base",
+            "title": "Ocean_Base",
+            "layerEName": "Ocean_Base",
+            "lang": "message.gis.mapgallery.arcgis_tile_baseMap.Ocean_Base",
+            "type": "image",
+            "listMode": "show",
+            "usedin2d": true
+          }]
+        },{
+          "id": "arcgisVectorTileBaseMap",
+          "title": "arcgisVectorTileBaseMap",
+          "tag": "arcgisVectorTileBaseMap",
+          "layerEName": "arcgisVectorTileBaseMap",
+          "lang": "message.gis.mapgallery.arcgisVectorTileBaseMap",
+          "visible": true,
+          "listMode": "show",
+          "layers": [{
+            "url": "https://basemaps.arcgis.com/arcgis/rest/services/OpenStreetMap_v2/VectorTileServer",
+            "id": "OSM_V2",
+            "visible": false,
+            "opacity": 1.0,
+            "maptype": "VectorTileLayer",
+            "tag": "OSM_V2",
+            "title": "OSM_V2",
+            "layerEName": "OSM_V2",
+            "lang": "message.gis.mapgallery.arcgis_vector_tile_baseMap.OSM_V2",
+            "type": "image",
+            "listMode": "show",
+            "usedin2d": true
+          },{
+            "url": "https://basemaps.arcgis.com/arcgis/rest/services/World_Contours_v2/VectorTileServer",
+            "id": "Contours_v2",
+            "visible": false,
+            "opacity": 1.0,
+            "maptype": "VectorTileLayer",
+            "tag": "Contours_v2",
+            "title": "Contours_v2",
+            "layerEName": "Contours_v2",
+            "lang": "message.gis.mapgallery.arcgis_vector_tile_baseMap.Contours_v2",
+            "type": "image",
+            "listMode": "show",
+            "usedin2d": true
+          }]
+        }]
+      }
+    ]
+  },
+  "proxyConifg": {
+    "useProxy": false,
+    "url": "http://192.168.107.184/Prox/proxy.jsp",
+    "httpsDomains": [{
+      "proxyurl": "http://192.168.107.184/Prox/proxy.jsp",
+      "domainName": "192.168.113.201"
+    }]
+  }
+}
