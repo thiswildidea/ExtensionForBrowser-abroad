@@ -117,21 +117,21 @@ export default {
 		 * 注意：实际使用时请替换为真实的支付宝二维码图片路径
 		 * 可以放在public/icons目录下，或使用网络图片地址
 		 */
-		const alipayQRCode = ref('/icons/alipay-qrcode.png'); 
+		const alipayQRCode = ref('./icons/pay/alipay-qrcode.png'); 
 		
 		/**
 		 * 微信支付二维码图片URL
 		 * 注意：实际使用时请替换为真实的微信支付二维码图片路径
 		 * 可以放在public/icons目录下，或使用网络图片地址
 		 */
-		const wechatQRCode = ref('/icons/wechat-qrcode.png');
+		const wechatQRCode = ref('./icons/pay/wechat-qrcode.png');
 		
 		/**
 		 * PayPal二维码图片URL
 		 * 注意：实际使用时请替换为真实的PayPal二维码图片路径
 		 * 可以放在public/icons目录下，或使用网络图片地址
 		 */
-		const paypalQRCode = ref('/icons/paypal-qrcode.png');
+		const paypalQRCode = ref('./icons/pay/paypal-qrcode.png');
 		
 		/**
 		 * 获取当前选中的支付方式二维码
@@ -155,11 +155,11 @@ export default {
 				// 添加时间戳防止缓存影响
 				const timestamp = new Date().getTime();
 				if (method === 'alipay') {
-					alipayQRCode.value = `/icons/alipay-qrcode.png?t=${timestamp}`;
+					alipayQRCode.value = `./icons/pay/alipay-qrcode.png?t=${timestamp}`;
 				} else if (method === 'wechat') {
-					wechatQRCode.value = `/icons/wechat-qrcode.png?t=${timestamp}`;
+					wechatQRCode.value = `./icons/pay/wechat-qrcode.png?t=${timestamp}`;
 				} else if (method === 'paypal') {
-					paypalQRCode.value = `/icons/paypal-qrcode.png?t=${timestamp}`;
+					paypalQRCode.value = `./icons/pay/paypal-qrcode.png?t=${timestamp}`;
 				}
 			}
 		}; 
@@ -175,11 +175,11 @@ export default {
 			// 重置当前选中的支付方式图片源，添加时间戳防止浏览器缓存影响
 			const timestamp = new Date().getTime();
 			if (paymentMethod.value === 'alipay') {
-				alipayQRCode.value = `/icons/alipay-qrcode.png?t=${timestamp}`;
+				alipayQRCode.value = `./icons/pay/alipay-qrcode.png?t=${timestamp}`;
 			} else if (paymentMethod.value === 'wechat') {
-				wechatQRCode.value = `/icons/wechat-qrcode.png?t=${timestamp}`;
+				wechatQRCode.value = `./icons/pay/wechat-qrcode.png?t=${timestamp}`;
 			} else if (paymentMethod.value === 'paypal') {
-				paypalQRCode.value = `/icons/paypal-qrcode.png?t=${timestamp}`;
+				paypalQRCode.value = `./icons/pay/paypal-qrcode.png?t=${timestamp}`;
 			}
 		};
 		

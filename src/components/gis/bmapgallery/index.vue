@@ -4,7 +4,7 @@
       <div  class="esri-bmapgallery-Menu" v-show='isopen'>
 		 <div  v-for="(v, k) in basemapconfig" :key="k">
 			<el-tooltip :content="v.layerEName" placement="top" close-delay="10">
-               <div class="esri-bmapgallery-Menu-Item" :class="{active:activeindex==k}" :style="`background-image: url(./assets/map/bmapgallery/${v.layerEName}.png)`" @click="basemapswitch(v,k)">
+               <div class="esri-bmapgallery-Menu-Item" :class="{active:activeindex==k}" :style="`background-image: url(./icons/map/bmapgallery/${v.layerEName}.png)`" @click="basemapswitch(v,k)">
                   <!-- <span>{{$t(v.lang)}}</span> -->
                </div>
 			</el-tooltip>
@@ -16,7 +16,7 @@
 	  </div>
 	</transition>
 	  <div class="esri-bmapgallery-detail">
-         <div class="esri-bmapgallery-detail-Item"  :style="`background-image: url(./assets/map/bmapgallery/${selectbasemapEName}.png)`" @click="openbasemapgallery">
+         <div class="esri-bmapgallery-detail-Item"  :style="`background-image: url(./icons/map/bmapgallery/${selectbasemapEName}.png)`" @click="openbasemapgallery">
 		   <el-tooltip content="Opacity" placement="top" close-delay="10">
 			 <el-slider class="esri-bmapgallery-detail-Item-opacity"  v-model="basemaplayeropacity"  :min=0 :max=1 :step=0.1 @change="changebasemaplayeropacity"/>
 		   </el-tooltip>

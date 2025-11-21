@@ -16,9 +16,9 @@
     "default_popup": "index.html",
     "default_title": "Earthquake Map",
     "default_icon":{
-      "16": "icons/icon16.png",
-      "48": "icons/icon48.png",
-      "128": "icons/icon128.png"
+      "16": "icons/menu/icon16.png",
+      "48": "icons/menu/icon48.png",
+      "128": "icons/menu/icon128.png"
     }
   },
   "icons":{

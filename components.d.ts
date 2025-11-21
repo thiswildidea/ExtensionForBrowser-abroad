@@ -18,6 +18,8 @@ declare module 'vue' {
     LanguageSwitcher: typeof import('./src/components/LanguageSwitcher.vue')['default']
     Mapgallery: typeof import('./src/components/gis/mapgallery/index.vue')['default']
     Maptoolbar: typeof import('./src/components/gis/maptoolbar/index.vue')['default']
+    RouterLink: typeof import('vue-router')['RouterLink']
+    RouterView: typeof import('vue-router')['RouterView']
     SvgIcon: typeof import('./src/components/svgIcon/index.vue')['default']
   }
   export interface ComponentCustomProperties {
