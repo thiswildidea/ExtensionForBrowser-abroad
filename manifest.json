@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "EsriMap Gallery",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "a browser extension for visualizing Esri Map onlinine using ArcGIS JavaScript API",
   "permissions": [
     "storage",
